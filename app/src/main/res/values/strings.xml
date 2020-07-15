@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">taller</string>
+    <string name="tab_text_1">Inicio</string>
+    <string name="tab_text_2">Entrada</string>
+    <string name="tab_text_3">Estadisticas</string>
+    <string name="tab_text_4">Objetivos</string>
+    <string name="tab_text_5">Opciones</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
