@@ -91,7 +91,7 @@ public class Inicio extends Fragment {
                        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(),"Cuentas",null,1);
                        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-                        if (!tipo.isEmpty() && !Categoria.isEmpty() &&  !favoritos.isEmpty()  && !favoritos.isEmpty()   ){
+                        if (!tipo.isEmpty() && !Categoria.isEmpty() &&  !favoritos.isEmpty()  && !fecha.isEmpty() && !fecha.isEmpty()  && !edt_cantidad.getText().toString().isEmpty()  ){
 
                             ContentValues registro = new ContentValues();
                             registro.put("cantidad",cantidad);
