@@ -34,7 +34,6 @@ public class Entrada extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_entrada, container, false);
         btn3 = v.findViewById(R.id.button1);
-        tv1 = v.findViewById(R.id.tv11);
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(),"Cuentas",null,1);
