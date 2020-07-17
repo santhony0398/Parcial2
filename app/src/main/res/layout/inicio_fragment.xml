@@ -108,7 +108,7 @@
         android:text="Fecha" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edt4"
         android:layout_width="160dp"
         android:layout_height="39dp"
         android:layout_marginStart="239dp"
@@ -139,13 +139,13 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText4"
-        android:layout_alignRight="@+id/editText4"
+        android:layout_alignEnd="@+id/edt4"
+        android:layout_alignRight="@+id/edt4"
         android:layout_marginStart="273dp"
         android:layout_marginLeft="273dp"
         android:layout_marginTop="445dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
         android:layout_marginBottom="80dp"
         android:onClick="onClick"
         android:text="Salir" />

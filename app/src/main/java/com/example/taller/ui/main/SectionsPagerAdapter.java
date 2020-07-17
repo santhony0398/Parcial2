@@ -8,7 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.taller.Entrada;
+import com.example.taller.Estadisticas_fragment;
 import com.example.taller.Inicio;
+import com.example.taller.Objetivo;
 import com.example.taller.R;
 
 /**
@@ -37,13 +40,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             return  inicio;
 
         case 1:
-            Entrada_fragment entradaFragment = new Entrada_fragment();
+            Entrada entradaFragment = new Entrada();
             return entradaFragment;
 
         case 2: Estadisticas_fragment estadisticasFragment = new Estadisticas_fragment();
             return estadisticasFragment;
 
-        case 3: Objetivos_fragment objetivosFragment = new Objetivos_fragment();
+        case 3: Objetivo objetivosFragment = new Objetivo();
             return objetivosFragment;
 
         case 4: Opciones_Fragment opciones = new Opciones_Fragment();
