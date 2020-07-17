@@ -51,7 +51,7 @@ public class Estadisticas_fragment extends Fragment {
 
 
 
-            do{
+            while( cursor.moveToNext() ){
 
                 //asignar los valores de la base de datos al arrayList
                 cantidad.add(cursor.getString(1));
@@ -62,11 +62,9 @@ public class Estadisticas_fragment extends Fragment {
                 fecha.add(cursor.getString(6));
 
 
-            }while( cursor.moveToNext() );
-
-
-         tv1.setText(fecha.get(0)+" "+tipo.get(0)+" "+favorito.get(0)+" "+categoria.get(0)+" "+categoria.get(0)+" "+concepto.get(0));
-
+            }
+            //Traer los datos de la base de datos 
+            tv1.setText(fecha.get(1)+" "+tipo.get(1)+" "+favorito.get(1)+" "+categoria.get(1)+" "+categoria.get(1)+" "+concepto.get(1));
         }
         else{
             Toast.makeText(getActivity(),"No hay campos",Toast.LENGTH_SHORT).show();

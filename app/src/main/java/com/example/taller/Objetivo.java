@@ -48,9 +48,8 @@ public class Objetivo extends Fragment {
 
 
 
-            do{
+            while( cursor.moveToNext() ){
 
-                //asignar los valores de la base de datos al arrayList
                 cantidad.add(cursor.getString(1));
                 tipo.add(cursor.getString(2));
                 favorito.add(cursor.getString(3));
@@ -59,10 +58,9 @@ public class Objetivo extends Fragment {
                 fecha.add(cursor.getString(6));
 
 
-            }while( cursor.moveToNext() );
+            }
 
-
-            tv1.setText(fecha.get(0)+" "+tipo.get(0)+" "+favorito.get(0)+" "+categoria.get(0)+" "+categoria.get(0)+" "+concepto.get(0));
+            tv1.setText(fecha.get(1)+" "+tipo.get(1)+" "+favorito.get(1)+" "+categoria.get(1)+" "+categoria.get(1)+" "+concepto.get(1));
 
         }
         else{
