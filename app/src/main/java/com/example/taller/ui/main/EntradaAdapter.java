@@ -43,6 +43,8 @@ public class EntradaAdapter extends RecyclerView.Adapter<EntradaAdapter.ViewHold
         holder.concepto.setText(list.get(position).getConcepto());
         holder.categoria.setText(list.get(position).getCategoria());
         holder.fecha.setText(list.get(position).getFecha());
+        holder.tipo.setText(list.get(position).getTipo());
+        holder.favorito.setText(list.get(position).getFavorito());
         holder.cantidad.setText(list.get(position).getCantidad());
     }
 

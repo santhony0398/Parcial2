@@ -17,6 +17,9 @@ import java.util.ArrayList;
 public class Estadisticas_fragment extends Fragment {
 
     private TextView tv1;
+    private Spinner spinnerMes;
+    private Spinner spinnerAnyo;
+    private Spinner spinnerMostrarPor;
 
     public static Estadisticas_fragment newInstance() {
         return new Estadisticas_fragment();
@@ -27,8 +30,20 @@ public class Estadisticas_fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_estadisticas, container, false);
-        tv1 = v.findViewById(R.id.tv9);
+        spinnerMes=v.findViewById(R.id.spinnerMes);
+        spinnerAnyo=v.findViewById(R.id.spinnerAnyo);
+        spinnerMostrarPor=v.findViewById(R.id.spinnerMostrarPor);
+        String[] meses={"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+        String[] anyos={"2018","2019","2020"};
+        String[] mostrarPor={"Fav1","Fav2","Fav3"};
+        ArrayAdapter<String> adapterMes = new ArrayAdapter<>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, meses);
+        spinnerMes.setAdapter(adapterMes);
+        ArrayAdapter <String> adapterAnyo = new ArrayAdapter<>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, anyos);
+        spinnerAnyo.setAdapter(adapterAnyo);
+        ArrayAdapter <String> adapterMPor = new ArrayAdapter<>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, mostrarPor);
+        spinnerMostrarPor.setAdapter(adapterMPor);
 
+        RecyclerView recyclerTarjetas = (RecyclerView) v.findViewById(R.id.lista_entradas);
 
         //abrir base de datos
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(),"Cuentas",null,1);
@@ -48,11 +63,7 @@ public class Estadisticas_fragment extends Fragment {
         Cursor cursor = BaseDeDatos.rawQuery("SELECT * FROM entrada",null);
 
         if(cursor != null && cursor.moveToFirst()){
-
-
-
             while( cursor.moveToNext() ){
-
                 //asignar los valores de la base de datos al arrayList
                 cantidad.add(cursor.getString(1));
                 tipo.add(cursor.getString(2));
@@ -60,11 +71,10 @@ public class Estadisticas_fragment extends Fragment {
                 categoria.add(cursor.getString(4));
                 concepto.add(cursor.getString(5));
                 fecha.add(cursor.getString(6));
-
-
             }
             //Traer los datos de la base de datos 
             tv1.setText(fecha.get(1)+" "+tipo.get(1)+" "+favorito.get(1)+" "+categoria.get(1)+" "+categoria.get(1)+" "+concepto.get(1));
+            Tarjetas(concepto.get(1),categoria.get(1),fecha.get(1),tipo.get(1),favorito.get(1),cantidad.get(1));
         }
         else{
             Toast.makeText(getActivity(),"No hay campos",Toast.LENGTH_SHORT).show();
